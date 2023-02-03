@@ -53,23 +53,21 @@ const docs: Array<GuaDocViewObject> = data.map((d) => {
 </script>
 
 <template>
-  <main>
-    <h1>{{ pageTitle }}</h1>
-    <div class="shiyi-doc">
-      <ol :start="startIndex">
-        <li v-for="item in docs" v-bind:key="item.id">
-          <a :title="item.displayName" :href="item.url" class="name">
-            {{ item.name }}
-          </a>
-          <ul>
-            <li v-for="(v, index) in item.text" v-bind:key="index">
-              {{ v }}
-            </li>
-          </ul>
-        </li>
-      </ol>
-    </div>
-  </main>
+  <h1>{{ pageTitle }}</h1>
+  <div class="shiyi-doc">
+    <ol :start="startIndex">
+      <li v-for="item in docs" v-bind:key="item.id">
+        <a :title="item.displayName" :href="item.url" class="name">
+          {{ item.name }}
+        </a>
+        <ul>
+          <li v-for="(v, index) in item.text" v-bind:key="index">
+            {{ v }}
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </div>
 </template>
 
 <style></style>

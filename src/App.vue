@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-// <RouterLink to="/">六十四卦表</RouterLink>
 const navs = [
+  { url: "/", title: "易經" },
   { url: "/doc/yijing/1", title: "易經上" },
   { url: "/doc/yijing/2", title: "易經下" },
   { url: "/doc/tuan/1", title: "彖傳上" },
@@ -18,50 +18,32 @@ const navs = [
 </script>
 
 <template>
-  <div
-    class="navbar navbar-expand-lg bg-light fixed-top"
-    role="navigation"
-  >
-    <div class="container-fluid">
-      <a class="navbar-brand yin-yang small" href="/">易經</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+  <header>
+    <nav>
+      <RouterLink
+        v-for="n in navs"
+        class="nav-link"
+        :to="n.url"
+        v-bind:key="n.title"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="navbar-collapse collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li v-for="n in navs" class="nav-item">
-            <RouterLink class="nav-link" :to="n.url">{{ n.title }}</RouterLink>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+        {{ n.title }}
+      </RouterLink>
+    </nav>
+  </header>
 
-  <!-- <li>
-           <span class="glyphicon glyphicon-question-sign help-tour" style="font-size:20px;margin-top:10px;cursor:pointer;" aria-hidden="true" title="在观看卦时可点击以获得提示"></span>
-           </li> -->
+  <hr />
 
-  <!-- <nav> </nav> -->
-
-  <div class="container">
+  <main>
     <RouterView :key="$route.path" />
+  </main>
 
-    <hr />
-    <footer class="footer">
-      <p>
-        <span>© 2012-present HaishengWu </span>
-        <RouterLink to="/help">帮助</RouterLink>
-      </p>
-    </footer>
-  </div>
+  <hr />
+  <footer class="footer">
+    <p>
+      <span>© 2012-present HaishengWu </span>
+      <RouterLink to="/help">帮助</RouterLink>
+    </p>
+  </footer>
 </template>
 
 <style scoped>
@@ -70,16 +52,8 @@ header {
   max-height: 100vh;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
-  /* width: 100%; */
-  font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
@@ -91,39 +65,18 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: block;
-  padding: 0 1rem;
-  /* border-left: 1px solid var(--color-border); */
+  display: inline-block;
+  padding: 0 0.3rem;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
 }
 
-nav a:first-of-type {
-  border: 0;
+hr {
+  margin: 2rem 0;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+footer {
+  font-size: 12px;
 }
 </style>

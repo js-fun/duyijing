@@ -1,17 +1,12 @@
-@import './base.css';
-
-h1,h2,h3,pre {
-  font-family: , "Helvetica Neue",Helvetica,Arial,sans-serif;
-}
+@import "./base.css";
 
 #app {
-  padding: 5rem;
+  padding: 2rem 5rem;
   max-width: 1280px;
   margin: 0 auto;
   font-weight: normal;
 }
 
-/*
 a,
 .green {
   text-decoration: none;
@@ -25,6 +20,14 @@ a,
   }
 }
 
+main h1,
+main h2,
+main h3,
+main h4 {
+  text-align: center;
+}
+
+/*
 @media (min-width: 1024px) {
 
   body {
