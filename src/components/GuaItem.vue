@@ -1,49 +1,75 @@
 <script lang="ts">
 import { getGuaData } from "../services/Yijing";
 
+type Yao = {
+  kind: string;
+  yaoCi: string;
+  xiaoXiang: string;
+  className: string;
+};
+type ViewObject = {
+  id: string;
+  name: string;
+  nameClass: string;
+  guaCi: string;
+  tuanCi: string;
+  daXiang: string;
+  activeYao: Yao | undefined;
+  yaos: Yao[];
+};
 export default {
   props: {
     id: String,
   },
   data() {
     const guaVal = getGuaData(this.id || "");
-    const vo = {
+    const yaos = guaVal.id.split("").map((x: string, index: number) => {
+      const kind = x === "1" ? "yang" : "yin";
+      return {
+        kind,
+        yaoCi: guaVal.yao_ci[5-index],
+        xiaoXiang: guaVal.xiao_xiang[5-index],
+        className: kind as string,
+      };
+    });
+    const vo: ViewObject = {
       id: guaVal.id,
       name: guaVal.name,
       nameClass: guaVal.name.length === 1 ? "name" : "name2",
-      showGuaInfo: true,
       guaCi: guaVal.gua_ci,
       tuanCi: guaVal.tuan_ci,
       daXiang: guaVal.da_xiang,
-      // TODO: those shall go to `yaos`
-      yaoCi: "",
-      xiaoXiang: "",
-      yaos: guaVal.id
-        .split("")
-        .map((x: string) => (x === "1" ? "yang" : "yin")),
+      activeYao: undefined,
+      yaos,
     };
     return { vo };
   },
   methods: {
     yaoClick(k: number) {
       const guaVal = getGuaData(this.id || "");
+      const yaos = this.vo.yaos.map((x: Yao, i: number) => {
+        const status = i === k ? "active" : "inactive";
+        return {
+          ...x,
+          className: x.kind + " " + status,
+        };
+      });
+
       this.vo = {
         ...this.vo,
-        showGuaInfo: false,
-        yaoCi: guaVal.yao_ci[k],
-        xiaoXiang: guaVal.xiao_xiang[k],
-        yaos: this.vo.yaos.map((x: string, i: number) => {
-          const status = i + k === 5 ? "active" : "inactive";
-          return x.replace(/(in){0,1}active/g, "").trim() + " " + status;
-        }),
+        activeYao: yaos[k],
+        yaos,
       };
     },
     guaClick() {
       this.vo = {
         ...this.vo,
-        showGuaInfo: true,
-        yaos: this.vo.yaos.map((x: string) => {
-          return x.replace(/(in){0,1}active/g, "").trim();
+        activeYao: undefined,
+        yaos: this.vo.yaos.map((x: Yao) => {
+          return {
+            ...x,
+            className: x.kind,
+          };
         }),
       };
     },
@@ -59,31 +85,31 @@ export default {
       <span
         v-for="(item, index) in vo.yaos"
         v-bind:key="index"
-        :class="item"
-        @click="yaoClick(5 - index)"
+        :class="item.className"
+        @click="yaoClick(index)"
       >
       </span>
     </div>
     <div class="col-sm-7 explanation">
-      <section name="guaCi" v-if="vo.showGuaInfo">
+      <section name="guaCi" v-if="!vo.activeYao">
         <label>卦辞</label>
         <p>{{ vo.guaCi }}</p>
       </section>
-      <section name="daXiang" v-if="vo.showGuaInfo">
+      <section name="daXiang" v-if="!vo.activeYao">
         <label>大象</label>
         <p>{{ vo.daXiang }}</p>
       </section>
-      <section name="tuanCi" v-if="vo.showGuaInfo">
+      <section name="tuanCi" v-if="!vo.activeYao">
         <label>彖辞</label>
         <p>{{ vo.tuanCi }}</p>
       </section>
-      <section name="yaoCi" v-if="!vo.showGuaInfo">
+      <section name="yaoCi" v-if="vo.activeYao">
         <label>爻辞</label>
-        <p>{{ vo.yaoCi }}</p>
+        <p>{{ vo.activeYao?.yaoCi }}</p>
       </section>
-      <section name="xiaoXiang" v-if="!vo.showGuaInfo">
+      <section name="xiaoXiang" v-if="vo.activeYao">
         <label>小象</label>
-        <p>{{ vo.xiaoXiang }}</p>
+        <p>{{ vo.activeYao?.xiaoXiang }}</p>
       </section>
     </div>
   </div>
