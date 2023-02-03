@@ -45,7 +45,7 @@ export default {
         </div>
       </div>
 
-      <div v-for="item in guas.xs">
+      <div v-for="item in guas.xs" v-bind:key="item.id">
         <h3>
           <a :href="item.url">{{ item.displayName }}</a>
         </h3>

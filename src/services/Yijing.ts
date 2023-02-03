@@ -1,5 +1,8 @@
-import Y from "@freizl/yijing/zh-TW/64gua.json";
+import YData from "@freizl/yijing/zh-TW/64gua.json";
 import XianTianData from "@freizl/yijing/zh-TW/xian-tian-8gua.json";
+
+export const XianTian = XianTianData;
+export const Y = YData;
 
 type KeyedData = Record<string, any>;
 
@@ -12,5 +15,3 @@ const keyedData: KeyedData = Y.reduce(function (pre: KeyedData, val) {
 export function getGuaData(key: string) {
   return keyedData[key] || {};
 }
-
-export const XianTian = XianTianData;

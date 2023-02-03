@@ -8,11 +8,11 @@ const itemss = getSixFourGuas();
     <div class="yin-yang">
       <div class="six-four">
         <table class="table">
-          <tr v-for="items in itemss">
-            <td v-for="item in items">
-              <gua-simple gua-size="small" gua-key="item.id">{{
-                item.name
-              }}</gua-simple>
+          <tr v-for="(items, index) in itemss" v-bind:key="index">
+            <td v-for="item in items" v-bind:key="item.id">
+              <gua-simple gua-size="small" gua-key="item.id">
+                {{ item.name }}
+              </gua-simple>
             </td>
           </tr>
         </table>
