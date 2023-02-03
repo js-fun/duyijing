@@ -11,11 +11,13 @@ CLOSED: [2023-02-02 Thu 21:35]
 #+begin_src js
   <RouterView :key="$route.path" />
 #+end_src
-* TODO Try to use TS definition from @freizl/yijing package
+* DONE Try to use TS definition from @freizl/yijing package
+CLOSED: [2023-02-03 Fri 09:12]
 * TODO Style! style! style!
-* INPROGRESS Gua component
+* DONE Gua component
+CLOSED: [2023-02-03 Fri 09:12]
 * TODO Prettify code
-- some logic may be simplified.
+- some logic probably can be simplified.
 * TODO Migrate feature using bootstrap-tour
 * Color plate
 - https://colors.ichuantong.cn/
