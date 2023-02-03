@@ -53,11 +53,7 @@
 </template>
 
 <style scoped>
-@media (min-width: 1024px) {
-  .x-about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+ ul.help li {
+   padding-bottom: 10px;
+ }
 </style>
