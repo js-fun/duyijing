@@ -52,7 +52,7 @@
   </main>
 </template>
 
-<style>
+<style scoped>
 @media (min-width: 1024px) {
   .x-about {
     min-height: 100vh;

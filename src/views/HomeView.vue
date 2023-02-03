@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { getSixFourGuas } from "./Gua";
-// import TheWelcome from "../components/TheWelcome.vue";
+import { getSixFourGuas } from "../services/Home";
 const itemss = getSixFourGuas();
 </script>
 
@@ -22,7 +21,7 @@ const itemss = getSixFourGuas();
   </main>
 </template>
 
-<style>
+<style scoped>
 .six-four table tr {
   border-right: 1px solid #ddd;
 }

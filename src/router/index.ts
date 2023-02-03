@@ -57,7 +57,6 @@ const router = createRouter({
       name: "za-gua",
       component: () => import("../views/ZaGuaView.vue"),
     },
-
   ],
 });
 

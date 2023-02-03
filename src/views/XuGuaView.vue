@@ -1,5 +1,5 @@
 <script setup lang="ts">
- /*
+/*
  $(".xugua-content").each(function (x) {
    $(this).html(
      $(this)

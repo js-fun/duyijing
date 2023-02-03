@@ -6,7 +6,7 @@ type GuaDocViewObject = {
   displayName: string;
   url: string;
   text: Array<string>;
- };
+};
 
 export default {
   data() {

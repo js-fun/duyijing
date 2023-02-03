@@ -1,9 +1,10 @@
 <script lang="ts">
 import Y from "@freizl/yijing/zh-TW/64gua.json";
-import { transform } from "./Gua";
+import { transform } from "../services/Gua";
 
 // may turn name to binary id.
 const normalizeInput = (paramsKey: string | string[]): string => {
+  // turns out `this.$route.params.id` has type `string | string[]`
   let key: string = "";
   if (Array.isArray(paramsKey)) {
     key = paramsKey[0];
