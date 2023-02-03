@@ -2,3 +2,5 @@
 
 
 * TODO Will vite build shared vendor file?
+
+* Try to use TS definition from @freizl/yijing package
