@@ -27,8 +27,8 @@ export default {
       const kind = x === "1" ? "yang" : "yin";
       return {
         kind,
-        yaoCi: guaVal.yao_ci[5-index],
-        xiaoXiang: guaVal.xiao_xiang[5-index],
+        yaoCi: guaVal.yao_ci[5 - index],
+        xiaoXiang: guaVal.xiao_xiang[5 - index],
         className: kind as string,
       };
     });
@@ -46,7 +46,6 @@ export default {
   },
   methods: {
     yaoClick(k: number) {
-      const guaVal = getGuaData(this.id || "");
       const yaos = this.vo.yaos.map((x: Yao, i: number) => {
         const status = i === k ? "active" : "inactive";
         return {

@@ -6,7 +6,7 @@ export const XianTian = XianTianData;
 export const Y = YData;
 
 const keyedData = new Map<string, SixtyFourGua>();
-Y.forEach(val => {
+Y.forEach((val) => {
   keyedData.set(val.id, val);
 });
 
