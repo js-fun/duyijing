@@ -1,7 +1,7 @@
 <script lang="ts">
 import Y from "@freizl/yijing/zh-TW/64gua.json";
 
-type GuaViewObject = {
+type GuaDocViewObject = {
   name: string;
   displayName: string;
   url: string;
@@ -16,7 +16,7 @@ export default {
     let data = [];
     let pageTitle = "";
     let startIndex = 1;
-    let docs: Array<GuaViewObject> = [];
+    let docs: Array<GuaDocViewObject> = [];
 
     if (id === "1") {
       pageSubTitle = "上";

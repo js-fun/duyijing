@@ -3,7 +3,14 @@ import Y from "@freizl/yijing/zh-TW/64gua.json";
 import { transform } from "./Gua";
 
 // may turn name to binary id.
-const normalizeInput = (key) => {
+const normalizeInput = (paramsKey: string | string[]): string => {
+  let key: string = "";
+  if (Array.isArray(paramsKey)) {
+    key = paramsKey[0];
+  } else {
+    key = paramsKey;
+  }
+
   if (key.match(/[0-9-]+/)) {
     return key;
   } else {
@@ -21,18 +28,10 @@ const normalizeInput = (key) => {
 export default {
   data() {
     const id = normalizeInput(this.$route.params.id);
-    const obj = transform(id);
-    const guas = {
-      base: obj.base,
-      xs: [obj.zong, obj.cuo, obj.jiao],
-    };
-    if (obj.zhi) {
-      guas.xs.unshift(obj.zhi);
-    }
-
-    return {guas};
+    const guas = transform(id);
+    return { guas };
   },
- };
+};
 </script>
 
 <template>
@@ -41,18 +40,18 @@ export default {
       <h1>{{ guas.base.displayName }}</h1>
       <div class="row" id="zhu-gua">
         <div class="col-sm-10 col-sm-offset-2">
-            <!-- <gua gua-size="large" gua-key="{{guas.base.id}}" ng-show="baseKey" ></gua> -->
+          <!-- <gua gua-size="large" gua-key="{{guas.base.id}}" ng-show="baseKey" ></gua> -->
         </div>
       </div>
 
-      <div v-for="item in guas.xs ">
+      <div v-for="item in guas.xs">
         <h3>
           <a :href="item.url">{{ item.displayName }}</a>
         </h3>
 
         <div class="row">
           <div class="col-sm-10 col-sm-offset-2">
-              <!-- <gua gua-size="large" gua-key="{{item.id}}" ng-show="baseKey"></gua> -->
+            <!-- <gua gua-size="large" gua-key="{{item.id}}" ng-show="baseKey"></gua> -->
           </div>
         </div>
       </div>
