@@ -28,10 +28,36 @@ const router = createRouter({
       component: () => import("../views/DocView.vue"),
     },
     {
+      path: "/xi-ci-1",
+      name: "xi-ci-1",
+      component: () => import("../views/XiCi1View.vue"),
+    },
+    {
+      path: "/xi-ci-2",
+      name: "xi-ci-2",
+      component: () => import("../views/XiCi2View.vue"),
+    },
+    {
+      path: "/wen-yan",
+      name: "wen-yan",
+      component: () => import("../views/WenYanView.vue"),
+    },
+    {
+      path: "/shuo-gua",
+      name: "shuo-gua",
+      component: () => import("../views/ShuoGuaView.vue"),
+    },
+    {
+      path: "/xu-gua",
+      name: "xu-gua",
+      component: () => import("../views/XuGuaView.vue"),
+    },
+    {
       path: "/za-gua",
       name: "za-gua",
       component: () => import("../views/ZaGuaView.vue"),
-    }
+    },
+
   ],
 });
 
