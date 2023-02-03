@@ -14,14 +14,33 @@ const vo = {
   daXiang: data.da_xiang,
   yaos: data.id.split("").map((x) => (x === "1" ? "yang" : "yin")),
 };
+
+const yaoClick = (k) => {
+     vo.yaos = data.id.split("").map((x, i) => {
+         const clazz = (x === "1" ? "yang" : "yin");
+         const status = (i + k === 5) ? 'active' : 'inactive';
+         console.log(x, i, k, clazz, status);
+         return clazz + ' ' + status;
+     });
+     console.log(vo);
+
+ };
+ const guaClick = () => {
+  console.log("click gua label");
+};
 </script>
 <template>
   <div class="col-sm-10 col-sm-offset-2">
     <div class="col-sm-3 gua large">
-      <label :class="vo.nameClass">
+      <label :class="vo.nameClass" @click="guaClick">
         {{ vo.name }}
       </label>
-      <span v-for="(item, index) in vo.yaos" v-bind:key="index" :class="item">
+      <span
+        v-for="(item, index) in vo.yaos"
+        v-bind:key="index"
+        :class="item"
+        @click="yaoClick(5 - index)"
+      >
       </span>
     </div>
     <div class="col-sm-7 explanation">
@@ -66,12 +85,12 @@ const vo = {
 .gua .yang,
 .gua .yin {
   display: block;
-  cursor: pointer;
+  cursor: default;
 }
 
 .gua .name,
 .gua .name2 {
-  cursor: pointer;
+  cursor: default;
 }
 
 .gua .yang.inactive,

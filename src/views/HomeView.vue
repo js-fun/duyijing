@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getSixFourGuas } from "../services/Home";
+import GuaItemSmall from "../components/GuaItemSmall.vue";
 const itemss = getSixFourGuas();
 </script>
 
@@ -10,9 +11,7 @@ const itemss = getSixFourGuas();
         <table class="table">
           <tr v-for="(items, index) in itemss" v-bind:key="index">
             <td v-for="item in items" v-bind:key="item.id">
-              <gua-simple gua-size="small" gua-key="item.id">
-                {{ item.name }}
-              </gua-simple>
+              <GuaItemSmall :id="item.id" />
             </td>
           </tr>
         </table>
@@ -31,7 +30,16 @@ const itemss = getSixFourGuas();
 
 .six-four table tr td {
   border-left: 1px solid #ddd;
-  width: 50px;
+  /* width: 50px; */
   text-align: center;
 }
+table  > tr > td {
+  padding: 15px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+ table {
+   border-collapse: collapse;
+ }
 </style>
