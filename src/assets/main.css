@@ -1,13 +1,17 @@
 @import './base.css';
 
+h1,h2,h3,pre {
+  font-family: , "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 #app {
+  padding: 5rem;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-
   font-weight: normal;
 }
 
+/*
 a,
 .green {
   text-decoration: none;
@@ -22,14 +26,15 @@ a,
 }
 
 @media (min-width: 1024px) {
+
   body {
     display: flex;
     place-items: center;
   }
-
   #app {
     display: grid;
     grid-template-columns: 1fr 2fr;
     padding: 0 2rem;
   }
 }
+ */

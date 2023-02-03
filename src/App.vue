@@ -1,32 +1,67 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+// <RouterLink to="/">六十四卦表</RouterLink>
+const navs = [
+  { url: "/doc/yijing/1", title: "易經上" },
+  { url: "/doc/yijing/2", title: "易經下" },
+  { url: "/doc/tuan/1", title: "彖傳上" },
+  { url: "/doc/tuan/2", title: "彖傳下" },
+  { url: "/doc/xiang/1", title: "象傳上" },
+  { url: "/doc/xiang/2", title: "象傳下" },
+  { url: "/doc/xi-ci-1", title: "系辭上" },
+  { url: "/doc/xi-ci-2", title: "系辭下" },
+  { url: "/doc/wen-yan", title: "文言傳" },
+  { url: "/doc/shuo-gua", title: "說卦傳" },
+  { url: "/doc/xu-gua", title: "序卦傳" },
+  { url: "/doc/za-gua", title: "雜卦傳" },
+];
 </script>
 
 <template>
-  <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">六十四卦表</RouterLink>
-        <RouterLink to="/doc/yijing/1">易經上</RouterLink>
-        <RouterLink to="/doc/yijing/2">易經下</RouterLink>
-        <RouterLink to="/doc/tuan/1">彖傳上</RouterLink>
-        <RouterLink to="/doc/tuan/2">彖傳下</RouterLink>
-        <RouterLink to="/doc/xiang/1">象傳上</RouterLink>
-        <RouterLink to="/doc/xiang/2">象傳下</RouterLink>
-        <RouterLink to="/doc/xi-ci-1">系辭上</RouterLink>
-        <RouterLink to="/doc/xi-ci-2">系辭下</RouterLink>
-        <RouterLink to="/doc/wen-yan">文言傳</RouterLink>
-        <RouterLink to="/doc/shuo-gua">說卦傳</RouterLink>
-        <RouterLink to="/doc/xu-gua">序卦傳</RouterLink>
-        <RouterLink to="/doc/za-gua">雜卦傳</RouterLink>
-        <RouterLink to="/help">帮助</RouterLink>
-      </nav>
+  <div
+    class="navbar navbar-expand-lg bg-light fixed-top"
+    role="navigation"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand yin-yang small" href="/">易經</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li v-for="n in navs" class="nav-item">
+            <RouterLink class="nav-link" :to="n.url">{{ n.title }}</RouterLink>
+          </li>
+        </ul>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <RouterView :key="$route.path" />
+  <!-- <li>
+           <span class="glyphicon glyphicon-question-sign help-tour" style="font-size:20px;margin-top:10px;cursor:pointer;" aria-hidden="true" title="在观看卦时可点击以获得提示"></span>
+           </li> -->
+
+  <!-- <nav> </nav> -->
+
+  <div class="container">
+    <RouterView :key="$route.path" />
+
+    <hr />
+    <footer class="footer">
+      <p>
+        <span>© 2012-present HaishengWu </span>
+        <RouterLink to="/help">帮助</RouterLink>
+      </p>
+    </footer>
+  </div>
 </template>
 
 <style scoped>

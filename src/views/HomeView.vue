@@ -34,12 +34,12 @@ const itemss = getSixFourGuas();
   text-align: center;
 }
 table > tr > td {
-  padding: 15px;
-  line-height: 1.42857143;
+  /* padding: 15px; */
+  /* line-height: 1.42857143; */
   vertical-align: top;
   border-top: 1px solid #ddd;
-}
+ }
 table {
-  border-collapse: collapse;
+  /* border-collapse: collapse; */
 }
 </style>
