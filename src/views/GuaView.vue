@@ -1,6 +1,10 @@
-<script lang="ts">
+<script setup lang="ts">
 import Y from "@freizl/yijing/zh-TW/64gua.json";
+import { useRoute } from "vue-router";
 import { transform } from "../services/Gua";
+import GuaItem from "../components/GuaItem.vue";
+
+const route = useRoute();
 
 // may turn name to binary id.
 const normalizeInput = (paramsKey: string | string[]): string => {
@@ -26,13 +30,8 @@ const normalizeInput = (paramsKey: string | string[]): string => {
 };
 
 // $document[0].title = guas.base.name + '卦';
-export default {
-  data() {
-    const id = normalizeInput(this.$route.params.id);
-    const guas = transform(id);
-    return { guas };
-  },
-};
+const id = normalizeInput(route.params.id);
+const guas = transform(id);
 </script>
 
 <template>
@@ -40,24 +39,26 @@ export default {
     <div class="gua-container">
       <h1>{{ guas.base.displayName }}</h1>
       <div class="row" id="zhu-gua">
-        <div class="col-sm-10 col-sm-offset-2">
-          <!-- <gua gua-size="large" gua-key="{{guas.base.id}}" ng-show="baseKey" ></gua> -->
-        </div>
+        <GuaItem :id="guas.base.id" />
       </div>
 
       <div v-for="item in guas.xs" v-bind:key="item.id">
-        <h3>
+        <h2>
           <a :href="item.url">{{ item.displayName }}</a>
-        </h3>
+        </h2>
 
         <div class="row">
-          <div class="col-sm-10 col-sm-offset-2">
-            <!-- <gua gua-size="large" gua-key="{{item.id}}" ng-show="baseKey"></gua> -->
-          </div>
+          <GuaItem :id="item.id" />
         </div>
       </div>
     </div>
   </main>
 </template>
 
-<style></style>
+<style scoped>
+.gua-container .row {
+  border-top: 1px solid #ddd;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+</style>

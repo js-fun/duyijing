@@ -1,6 +1,19 @@
 #+title: Dev
 
 
-* TODO Will vite build shared vendor file?
+* DONE Will vite build shared vendor file?
+CLOSED: [2023-02-02 Thu 21:35]
+- config code split in ~vite.config.ts~
+* DONE Unable to re-render when url changes
+CLOSED: [2023-02-02 Thu 21:35]
+- set key for router view
 
-* Try to use TS definition from @freizl/yijing package
+#+begin_src js
+  <RouterView :key="$route.path" />
+#+end_src
+* TODO Try to use TS definition from @freizl/yijing package
+* TODO Style! style! style!
+* TODO Gua component
+* TODO Prettify code
+- some logic may be simplified.
+* TODO Migrate feature using bootstrap-tour
