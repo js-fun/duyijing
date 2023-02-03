@@ -19,6 +19,8 @@ CLOSED: [2023-02-03 Fri 09:12]
 * TODO Prettify code
 - some logic probably can be simplified.
 * TODO Migrate feature using bootstrap-tour
-* Color plate
+* TODO Color plate
 - https://colors.ichuantong.cn/
 - http://zhongguose.com/
+
+* TODO Add search box
