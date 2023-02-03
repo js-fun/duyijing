@@ -5,20 +5,26 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/yijing/1">Yijing</RouterLink>
+        <RouterLink to="/yijing/2">Yijing</RouterLink>
+        <RouterLink to="/tuan/1">Tuan</RouterLink>
+        <RouterLink to="/tuan/2">Tuan</RouterLink>
+        <RouterLink to="/xiang/1">Xiang</RouterLink>
+        <RouterLink to="/xiang/2">Xiang</RouterLink>
+        <RouterLink to="/xi-ci/1">XiCi</RouterLink>
+        <RouterLink to="/xi-ci/2">XiCi</RouterLink>
+        <RouterLink to="/wen-yan">WenYan</RouterLink>
+        <RouterLink to="/shuo-gua">ShuoGua</RouterLink>
+        <RouterLink to="/xu-gua">XuGua</RouterLink>
+        <RouterLink to="/za-gua">雜卦傳</RouterLink>
+        <RouterLink to="/help">帮助</RouterLink>
       </nav>
     </div>
   </header>
@@ -38,7 +44,7 @@ header {
 }
 
 nav {
-  width: 100%;
+  /* width: 100%; */
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
@@ -53,9 +59,9 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: inline-block;
+  display: block;
   padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  /* border-left: 1px solid var(--color-border); */
 }
 
 nav a:first-of-type {
