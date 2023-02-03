@@ -1,32 +1,53 @@
-<script setup lang="ts">
+<script lang="ts">
 import { getGuaData } from "../services/Yijing";
 
-const props = defineProps<{ id: string }>();
-const data = getGuaData(props.id);
-
-const vo = {
-  id: data.id,
-  name: data.name,
-  nameClass: data.name.length === 1 ? "name" : "name2",
-  showGuaInfo: true,
-  guaCi: data.gua_ci,
-  tuanCi: data.tuan_ci,
-  daXiang: data.da_xiang,
-  yaos: data.id.split("").map((x) => (x === "1" ? "yang" : "yin")),
-};
-
-const yaoClick = (k) => {
-     vo.yaos = data.id.split("").map((x, i) => {
-         const clazz = (x === "1" ? "yang" : "yin");
-         const status = (i + k === 5) ? 'active' : 'inactive';
-         console.log(x, i, k, clazz, status);
-         return clazz + ' ' + status;
-     });
-     console.log(vo);
-
- };
- const guaClick = () => {
-  console.log("click gua label");
+export default {
+  props: {
+    id: String,
+  },
+  data() {
+    const guaVal = getGuaData(this.id || "");
+    const vo = {
+      id: guaVal.id,
+      name: guaVal.name,
+      nameClass: guaVal.name.length === 1 ? "name" : "name2",
+      showGuaInfo: true,
+      guaCi: guaVal.gua_ci,
+      tuanCi: guaVal.tuan_ci,
+      daXiang: guaVal.da_xiang,
+      // TODO: those shall go to `yaos`
+      yaoCi: "",
+      xiaoXiang: "",
+      yaos: guaVal.id
+        .split("")
+        .map((x: string) => (x === "1" ? "yang" : "yin")),
+    };
+    return { vo };
+  },
+  methods: {
+    yaoClick(k: number) {
+      const guaVal = getGuaData(this.id || "");
+      this.vo = {
+        ...this.vo,
+        showGuaInfo: false,
+        yaoCi: guaVal.yao_ci[k],
+        xiaoXiang: guaVal.xiao_xiang[k],
+        yaos: this.vo.yaos.map((x: string, i: number) => {
+          const status = i + k === 5 ? "active" : "inactive";
+          return x.replace(/(in){0,1}active/g, "").trim() + " " + status;
+        }),
+      };
+    },
+    guaClick() {
+      this.vo = {
+        ...this.vo,
+        showGuaInfo: true,
+        yaos: this.vo.yaos.map((x: string) => {
+          return x.replace(/(in){0,1}active/g, "").trim();
+        }),
+      };
+    },
+  },
 };
 </script>
 <template>

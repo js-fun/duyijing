@@ -10,30 +10,32 @@ const vo = {
   url: "/gua/" + data.name,
   nameClass: data.name.length === 1 ? "name" : "name2",
   title: data.name + "卦",
-  yaos: data.id.split("").map((x) => (x === "1" ? "yang" : "yin")),
+  yaos: data.id.split("").map((x: string) => (x === "1" ? "yang" : "yin")),
 };
 </script>
 <template>
   <a :href="vo.url" class="gua-simple" :title="vo.title">
     <section class="gua small">
       <label :class="vo.nameClass">{{ vo.name }}</label>
-      <span v-for="item in vo.yaos" :class="item"></span>
+      <span
+        v-for="(item, index) in vo.yaos"
+        :class="item"
+        v-bind:key="index"
+      ></span>
     </section>
   </a>
 </template>
 
 <style scoped>
-
 .gua .yang,
 .gua .yin {
   display: block;
 }
 
-
 .gua .name,
 .gua .name2 {
   cursor: pointer;
- }
+}
 
 .gua .yang {
   background-color: #ff1100;

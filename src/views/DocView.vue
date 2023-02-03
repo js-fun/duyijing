@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
+import type { SixtyFourGua } from "@freizl/yijing";
 import { Y } from "../services/Yijing";
 const route = useRoute();
 
@@ -28,7 +29,7 @@ if (id === "1") {
 }
 
 let pageTitle = "";
-let fetchText = function () {};
+let fetchText = (d: SixtyFourGua) => [d.gua_ci];
 if (t === "yijing") {
   pageTitle = `易經${pageSubTitle}`;
   fetchText = (d) => [d.gua_ci, ...d.yao_ci];

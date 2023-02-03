@@ -33,13 +33,13 @@ const itemss = getSixFourGuas();
   /* width: 50px; */
   text-align: center;
 }
-table  > tr > td {
+table > tr > td {
   padding: 15px;
   line-height: 1.42857143;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
- table {
-   border-collapse: collapse;
- }
+table {
+  border-collapse: collapse;
+}
 </style>
