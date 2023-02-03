@@ -15,9 +15,7 @@ const t = route.params.type;
 const id = route.params.id;
 let pageSubTitle = "";
 let data = [];
-let pageTitle = "";
 let startIndex = 1;
-let docs: Array<GuaDocViewObject> = [];
 
 if (id === "1") {
   pageSubTitle = "上";
@@ -29,40 +27,28 @@ if (id === "1") {
   data = Y.slice(30);
 }
 
+let pageTitle = "";
+let fetchText = function () {};
 if (t === "yijing") {
   pageTitle = `易經${pageSubTitle}`;
-  docs = data.map((d) => {
-    return {
-      id: d.id,
-      name: d.name,
-      displayName: d.name + "卦",
-      url: "/gua/" + d.name,
-      text: [d.gua_ci, ...d.yao_ci],
-    };
-  });
+  fetchText = (d) => [d.gua_ci, ...d.yao_ci];
 } else if (t === "tuan") {
   pageTitle = `彖傳${pageSubTitle}`;
-  docs = data.map((d) => {
-    return {
-      id: d.id,
-      name: d.name,
-      displayName: d.name + "卦",
-      url: "/gua/" + d.name,
-      text: [d.tuan_ci],
-    };
-  });
+  fetchText = (d) => [d.tuan_ci];
 } else if (t === "xiang") {
   pageTitle = `象傳${pageSubTitle}`;
-  docs = data.map((d) => {
-    return {
-      id: d.id,
-      name: d.name,
-      displayName: d.name + "卦",
-      url: "/gua/" + d.name,
-      text: [d.da_xiang, ...d.xiao_xiang],
-    };
-  });
+  fetchText = (d) => [d.da_xiang, ...d.xiao_xiang];
 }
+
+const docs: Array<GuaDocViewObject> = data.map((d) => {
+  return {
+    id: d.id,
+    name: d.name,
+    displayName: d.name + "卦",
+    url: "/gua/" + d.name,
+    text: fetchText(d),
+  };
+});
 </script>
 
 <template>
