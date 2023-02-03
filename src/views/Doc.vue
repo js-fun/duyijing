@@ -1,6 +1,13 @@
 <script lang="ts">
 import Y from "@freizl/yijing/zh-TW/64gua.json";
 
+type GuaViewObject = {
+  name: string;
+  displayName: string;
+  url: string;
+  text: Array<string>;
+ };
+
 export default {
   data() {
     const t = this.$route.params.type;
@@ -9,7 +16,7 @@ export default {
     let data = [];
     let pageTitle = "";
     let startIndex = 1;
-    let docs = [];
+    let docs: Array<GuaViewObject> = [];
 
     if (id === "1") {
       pageSubTitle = "上";
@@ -28,7 +35,7 @@ export default {
           name: d.name,
           displayName: d.name + "卦",
           url: "/gua/" + d.name,
-          text: [].concat(d.gua_ci).concat(d.yao_ci),
+          text: [d.gua_ci, ...d.yao_ci],
         };
       });
     } else if (t === "tuan") {
@@ -38,7 +45,7 @@ export default {
           name: d.name,
           displayName: d.name + "卦",
           url: "/gua/" + d.name,
-          text: [].concat(d.tuan_ci),
+          text: [d.tuan_ci],
         };
       });
     } else if (t === "xiang") {
@@ -48,7 +55,7 @@ export default {
           name: d.name,
           displayName: d.name + "卦",
           url: "/gua/" + d.name,
-          text: [].concat(d.da_xiang).concat(d.xiao_xiang),
+          text: [d.da_xiang, ...d.xiao_xiang],
         };
       });
     }
@@ -68,12 +75,9 @@ export default {
     <div class="shiyi-doc">
       <ol :start="startIndex">
         <li v-for="item in docs">
-          <a
-            :title="item.displayName"
-            :href="item.url"
-            class="name"
-            >{{ item.name }}</a
-          >
+          <a :title="item.displayName" :href="item.url" class="name">{{
+            item.name
+          }}</a>
           <ul>
             <li v-for="v in item.text">
               {{ v }}
