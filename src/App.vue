@@ -26,7 +26,7 @@ import { RouterLink, RouterView } from "vue-router";
     </div>
   </header>
 
-  <RouterView />
+  <RouterView :key="$route.path" />
 </template>
 
 <style scoped>
