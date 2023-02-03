@@ -18,6 +18,11 @@ const router = createRouter({
       component: () => import("../views/HelpView.vue"),
     },
     {
+      path: "/doc/:type/:id",
+      name: "doc",
+      component: () => import("../views/Doc.vue"),
+    },
+    {
       path: "/za-gua",
       name: "za-gua",
       component: () => import("../views/ZaGuaView.vue"),

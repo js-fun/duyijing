@@ -8,21 +8,20 @@ import HelloWorld from "./components/HelloWorld.vue";
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
+      <!-- <HelloWorld msg="You did it!" /> -->
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/yijing/1">Yijing</RouterLink>
-        <RouterLink to="/yijing/2">Yijing</RouterLink>
-        <RouterLink to="/tuan/1">Tuan</RouterLink>
-        <RouterLink to="/tuan/2">Tuan</RouterLink>
-        <RouterLink to="/xiang/1">Xiang</RouterLink>
-        <RouterLink to="/xiang/2">Xiang</RouterLink>
-        <RouterLink to="/xi-ci/1">XiCi</RouterLink>
-        <RouterLink to="/xi-ci/2">XiCi</RouterLink>
-        <RouterLink to="/wen-yan">WenYan</RouterLink>
-        <RouterLink to="/shuo-gua">ShuoGua</RouterLink>
-        <RouterLink to="/xu-gua">XuGua</RouterLink>
+        <RouterLink to="/">六十四卦表</RouterLink>
+        <RouterLink to="/doc/yijing/1">易經上</RouterLink>
+        <RouterLink to="/doc/yijing/2">易經下</RouterLink>
+        <RouterLink to="/doc/tuan/1">彖傳上</RouterLink>
+        <RouterLink to="/doc/tuan/2">彖傳下</RouterLink>
+        <RouterLink to="/doc/xiang/1">象傳上</RouterLink>
+        <RouterLink to="/doc/xiang/2">象傳下</RouterLink>
+        <RouterLink to="/xi-ci/1">系辭上</RouterLink>
+        <RouterLink to="/xi-ci/2">系辭下</RouterLink>
+        <RouterLink to="/wen-yan">文言傳</RouterLink>
+        <RouterLink to="/shuo-gua">說卦傳</RouterLink>
+        <RouterLink to="/xu-gua">序卦傳</RouterLink>
         <RouterLink to="/za-gua">雜卦傳</RouterLink>
         <RouterLink to="/help">帮助</RouterLink>
       </nav>
