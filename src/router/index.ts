@@ -28,32 +28,32 @@ const router = createRouter({
       component: () => import("../views/DocView.vue"),
     },
     {
-      path: "/xi-ci-1",
+      path: "/doc/xi-ci-1",
       name: "xi-ci-1",
       component: () => import("../views/XiCi1View.vue"),
     },
     {
-      path: "/xi-ci-2",
+      path: "/doc/xi-ci-2",
       name: "xi-ci-2",
       component: () => import("../views/XiCi2View.vue"),
     },
     {
-      path: "/wen-yan",
+      path: "/doc/wen-yan",
       name: "wen-yan",
       component: () => import("../views/WenYanView.vue"),
     },
     {
-      path: "/shuo-gua",
+      path: "/doc/shuo-gua",
       name: "shuo-gua",
       component: () => import("../views/ShuoGuaView.vue"),
     },
     {
-      path: "/xu-gua",
+      path: "/doc/xu-gua",
       name: "xu-gua",
       component: () => import("../views/XuGuaView.vue"),
     },
     {
-      path: "/za-gua",
+      path: "/doc/za-gua",
       name: "za-gua",
       component: () => import("../views/ZaGuaView.vue"),
     },

@@ -15,12 +15,12 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/doc/tuan/2">彖傳下</RouterLink>
         <RouterLink to="/doc/xiang/1">象傳上</RouterLink>
         <RouterLink to="/doc/xiang/2">象傳下</RouterLink>
-        <RouterLink to="/xi-ci-1">系辭上</RouterLink>
-        <RouterLink to="/xi-ci-2">系辭下</RouterLink>
-        <RouterLink to="/wen-yan">文言傳</RouterLink>
-        <RouterLink to="/shuo-gua">說卦傳</RouterLink>
-        <RouterLink to="/xu-gua">序卦傳</RouterLink>
-        <RouterLink to="/za-gua">雜卦傳</RouterLink>
+        <RouterLink to="/doc/xi-ci-1">系辭上</RouterLink>
+        <RouterLink to="/doc/xi-ci-2">系辭下</RouterLink>
+        <RouterLink to="/doc/wen-yan">文言傳</RouterLink>
+        <RouterLink to="/doc/shuo-gua">說卦傳</RouterLink>
+        <RouterLink to="/doc/xu-gua">序卦傳</RouterLink>
+        <RouterLink to="/doc/za-gua">雜卦傳</RouterLink>
         <RouterLink to="/help">帮助</RouterLink>
       </nav>
     </div>
