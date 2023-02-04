@@ -31,8 +31,6 @@ const navs = [
     </nav>
   </header>
 
-  <hr />
-
   <main>
     <RouterView :key="$route.path" />
   </main>
@@ -54,6 +52,9 @@ header {
 
 nav {
   text-align: center;
+  background-color: #f8f8f8;
+  padding: 15px 0;
+  border-radius: 5px;
 }
 
 nav a.router-link-exact-active {
@@ -72,11 +73,16 @@ nav a {
   font-weight: 600;
 }
 
+main {
+  margin-top: 20px;
+}
+
 hr {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 footer {
   font-size: 12px;
 }
+
 </style>

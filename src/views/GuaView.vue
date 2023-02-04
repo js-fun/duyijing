@@ -37,11 +37,11 @@ const guas = transform(id);
 <template>
   <div class="gua-container">
     <h1>{{ guas.base.displayName }}</h1>
-    <div class="row" id="zhu-gua">
+    <div class="row" :id="guas.base.kind">
       <GuaItem :id="guas.base.id" />
     </div>
 
-    <div v-for="item in guas.xs" v-bind:key="item.id">
+    <div v-for="item in guas.xs" v-bind:key="item.id" :id="item.kind">
       <h2>
         <a :href="item.url">{{ item.displayName }}</a>
       </h2>
@@ -55,7 +55,7 @@ const guas = transform(id);
 
 <style scoped>
 .gua-container .row {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #DDD;
   padding-bottom: 20px;
   padding-top: 20px;
 }

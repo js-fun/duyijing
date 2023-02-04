@@ -42,4 +42,10 @@ table > tr > td {
 table {
   border-collapse: collapse;
 }
+
+@media (hover: hover) {
+  a:hover {
+    text-decoration: none !important;
+  }
+}
 </style>

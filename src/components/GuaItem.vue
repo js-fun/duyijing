@@ -76,8 +76,8 @@ export default {
 };
 </script>
 <template>
-  <div class="col-sm-10 col-sm-offset-2">
-    <div class="col-sm-3 gua large">
+  <div class="gua-item">
+    <div class="gua">
       <label :class="vo.nameClass" @click="guaClick">
         {{ vo.name }}
       </label>
@@ -89,7 +89,7 @@ export default {
       >
       </span>
     </div>
-    <div class="col-sm-7 explanation">
+    <div class="text">
       <section name="guaCi" v-if="!vo.activeYao">
         <label>卦辞</label>
         <p>{{ vo.guaCi }}</p>
@@ -115,67 +115,57 @@ export default {
 </template>
 
 <style scoped>
-.col-sm-10 {
-  float: left;
+.gua-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  column-gap: 1rem;
 }
-.col-sm-3 {
-  width: 25%;
-  float: left;
+
+.gua {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
-.col-sm-7 {
-  width: 58.3333%;
-  float: left;
-  margin-top: 55px;
+
+.gua .name,
+.gua .name2 {
+  font-size: 18pt;
+  cursor: default;
 }
 
 .gua .yang,
 .gua .yin {
   display: block;
   cursor: default;
+  margin-bottom: 15px;
+  height: 30px;
+  width: 160px;
 }
-
-.gua .name,
-.gua .name2 {
-  cursor: default;
+.gua .yang {
+  background-color: var(--color-red);
+}
+.gua .yin {
+  border-color: #000;
+  border-left-style: solid;
+  border-left-width: 75px;
+  border-right-style: solid;
+  border-right-width: 75px;
 }
 
 .gua .yang.inactive,
 .gua .yin.inactive {
   opacity: 0.2;
 }
-.gua .yang {
-  background-color: #ff1100;
-}
-.gua .yin {
-  border-color: #000;
-  border-left-style: solid;
-  border-right-style: solid;
-}
 
-.gua.large .name {
-  margin-left: 60px;
-  font-size: 28pt;
-}
-.gua.large .name2 {
-  font-size: 28pt;
-  margin-left: 40px;
-}
-
-.gua.large .yang,
-.gua.large .yin {
-  margin-bottom: 15px;
-  height: 30px;
-  width: 160px;
-}
-.gua.large .yin {
-  border-left-width: 75px;
-  border-right-width: 75px;
-}
-
-.explanation {
+.text {
+  flex: 2;
   margin-top: 55px;
 }
-.explanation section label {
+.text section label {
   font-size: 18pt;
 }
 </style>
