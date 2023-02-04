@@ -40,11 +40,11 @@ const vo = {
 .gua .yang {
   background-color: var(--color-red);
 }
- .gua .yin {
-   border-color: var(--color-black);
-   border-left-style: solid;
-   border-right-style: solid;
- }
+.gua .yin {
+  border-color: var(--color-black);
+  border-left-style: solid;
+  border-right-style: solid;
+}
 
 .gua.small .name {
   margin-bottom: 2px;

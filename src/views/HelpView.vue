@@ -58,5 +58,5 @@ ul.help li {
 h2 {
   border-bottom: 1px solid var(--color-border);
   margin: 2rem 0 1rem;
- }
+}
 </style>

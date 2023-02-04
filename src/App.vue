@@ -49,9 +49,9 @@ header {
   line-height: 1.5;
   max-height: 100vh;
   position: fixed;
-  right:0;
-  left:0;
-  top:0;
+  right: 0;
+  left: 0;
+  top: 0;
   z-index: 1080;
 }
 
@@ -90,5 +90,4 @@ hr {
 footer {
   font-size: 12px;
 }
-
 </style>
