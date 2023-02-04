@@ -48,17 +48,23 @@ const navs = [
 header {
   line-height: 1.5;
   max-height: 100vh;
+  position: fixed;
+  right:0;
+  left:0;
+  top:0;
+  z-index: 1080;
 }
 
 nav {
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: var(--color-black-mo);
+  color: #fff;
   padding: 15px 0;
-  border-radius: 5px;
 }
 
+nav a,
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: #fff;
 }
 
 nav a.router-link-exact-active:hover {
@@ -74,7 +80,7 @@ nav a {
 }
 
 main {
-  margin-top: 20px;
+  margin-top: 45px;
 }
 
 hr {

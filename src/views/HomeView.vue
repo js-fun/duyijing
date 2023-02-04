@@ -18,8 +18,8 @@ const itemss = getSixFourGuas();
 
 <style scoped>
 .six-four {
-  margin: 10px auto;
-  width: 70%; /* hack: certer table */
+  display: flex;
+  justify-content: space-around;
 }
 .six-four table tr {
   border-right: 1px solid #000;
@@ -30,12 +30,8 @@ const itemss = getSixFourGuas();
 
 .six-four table tr td {
   border-left: 1px solid #000;
-  /* width: 50px; */
   text-align: center;
-}
-table > tr > td {
-  padding: 15px;
-  /* line-height: 1.42857143; */
+  padding: 8px 20px;
   vertical-align: top;
   border-top: 1px solid #000;
 }

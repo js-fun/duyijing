@@ -149,7 +149,7 @@ export default {
   background-color: var(--color-red);
 }
 .gua .yin {
-  border-color: #000;
+  border-color: var(--color-black);
   border-left-style: solid;
   border-left-width: 75px;
   border-right-style: solid;

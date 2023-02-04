@@ -13,6 +13,7 @@
   --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
   --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
 
+  --vt-c-indigo: #213547;
   --vt-c-text-light-1: var(--vt-c-indigo);
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
@@ -21,18 +22,17 @@
 
 /* semantic color variables for this project */
 :root {
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --color-white-water: #88ada6;
+  --color-black-mo: #50616d;
+  --color-black-qi: #161823;
+  --color-white: #fffbf0;
   --color-purple: #4c221b;
   --color-red: #ff2121;
 
-  --color-background: var(--color-white-water);
+  --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1);
+  --color-heading: var(--vt-c-text-light-1);
+  --color-text: var(--vt-c-text-light-1);
+  --color-background: var(--color-white-qi);
 }
 
 /*
@@ -74,7 +74,7 @@ body {
 a,
 .green {
   text-decoration: none;
-  color: var(--color-purple);
+  color: var(--color-text);
   transition: 0.4s;
 }
 a:hover {

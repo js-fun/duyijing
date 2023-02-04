@@ -55,7 +55,7 @@ const guas = transform(id);
 
 <style scoped>
 .gua-container .row {
-  border-top: 1px solid #DDD;
+  border-top: 1px solid var(--color-border);
   padding-bottom: 20px;
   padding-top: 20px;
 }
