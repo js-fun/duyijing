@@ -108,15 +108,16 @@ export function transform(originalKey: string) {
 
   const result = {
     base: populateValue("主卦", id),
-    xs: [
-      populateValue("綜卦", zongGua(id)),
-      populateValue("錯卦", cuoGua(id)),
-      populateValue("交卦", jiaoGua(id)),
-    ],
+    xs: [],
   };
 
   if (originalKey.match(bushiKeys) || originalKey.match(digitalGuaKeys)) {
-    result.xs.push(populateValue("之卦", zhiGua(originalKey, id)));
+    result.xs = [
+      populateValue("之卦", zhiGua(originalKey, id)),
+      populateValue("綜卦", zongGua(id)),
+      populateValue("錯卦", cuoGua(id)),
+      populateValue("交卦", jiaoGua(id)),
+    ];
   }
 
   return result;
