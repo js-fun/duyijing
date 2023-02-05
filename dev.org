@@ -1,6 +1,5 @@
 #+title: Dev
 
-
 * DONE Will vite build shared vendor file?
 CLOSED: [2023-02-02 Thu 21:35]
 - config code split in ~vite.config.ts~

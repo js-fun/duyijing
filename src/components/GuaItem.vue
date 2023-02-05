@@ -133,7 +133,7 @@ export default {
 
 .gua .name,
 .gua .name2 {
-  font-size: 18pt;
+  font-size: var(--secondary-title-font-size);
   cursor: default;
 }
 
@@ -166,6 +166,6 @@ export default {
   margin-top: 55px;
 }
 .text section label {
-  font-size: 18pt;
+  font-size: var(--secondary-title-font-size);
 }
 </style>

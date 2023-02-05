@@ -33,6 +33,8 @@
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
   --color-background: var(--color-white-qi);
+
+  --secondary-title-font-size: 20pt;
 }
 
 /*
@@ -58,7 +60,7 @@ body {
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  font-size: 18px;
+  font-size: 14pt;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
