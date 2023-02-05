@@ -73,6 +73,5 @@ const docs: Array<GuaDocViewObject> = data.map((d) => {
 <style scoped>
 .doc .name {
   font-size: var(--secondary-title-font-size);
- }
-
+}
 </style>

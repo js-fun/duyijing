@@ -85,14 +85,16 @@ function zhiGua(originalKey: string, normalizedKey: string) {
   }
 }
 
-// type GuaViewObject = {
-//   kind: string;
-//   id: string;
-//   url: string;
-//   title: string;
-//   displayName: string;
-// }
-
+type GuaViewObject = {
+  kind: string;
+  id: string;
+  url: string;
+  displayName: string;
+};
+type ResultType = {
+  base: GuaViewObject;
+  xs: GuaViewObject[];
+};
 export function transform(originalKey: string) {
   const id = normalizeKey(originalKey);
   const populateValue = (kind: string, key: string) => {
@@ -106,7 +108,7 @@ export function transform(originalKey: string) {
     };
   };
 
-  const result = {
+  const result: ResultType = {
     base: populateValue("主卦", id),
     xs: [],
   };

@@ -37,7 +37,7 @@ export const navs = [
   { url: "/doc/xiang/1", title: "象傳上" },
   { url: "/doc/xiang/2", title: "象傳下" },
   { url: "/doc/xi-ci/1", title: XiCi.title + "上" },
-  { url: "/doc/xi-ci/2", title: XiCi.title + "下"},
+  { url: "/doc/xi-ci/2", title: XiCi.title + "下" },
   { url: "/doc/wen-yan", title: WenYan.title },
   { url: "/doc/shuo-gua", title: ShuoGua.title },
   { url: "/doc/xu-gua", title: XuGua.title },
