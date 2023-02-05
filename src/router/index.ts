@@ -29,8 +29,8 @@ const router = createRouter({
       component: () => import("../views/DocView.vue"),
     },
     {
-      path: "/doc/xi-ci",
-      name: "xi-ci-1",
+      path: "/doc/xi-ci/:id",
+      name: "xi-ci",
       component: () => import("../views/XiCiView.vue"),
     },
     {
