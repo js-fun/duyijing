@@ -25,3 +25,5 @@ CLOSED: [2023-02-03 Fri 09:12]
 
 * TODO Add search box
 * TODO Extra shared css for yang/yin yao span
+* INPROGRESS Default to cn
+- add separated site for zh-tw via build

@@ -1,20 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-const navs = [
-  { url: "/", title: "易經" },
-  { url: "/doc/yijing/1", title: "易經上" },
-  { url: "/doc/yijing/2", title: "易經下" },
-  { url: "/doc/tuan/1", title: "彖傳上" },
-  { url: "/doc/tuan/2", title: "彖傳下" },
-  { url: "/doc/xiang/1", title: "象傳上" },
-  { url: "/doc/xiang/2", title: "象傳下" },
-  { url: "/doc/xi-ci/1", title: "系辭上" },
-  { url: "/doc/xi-ci/2", title: "系辭下" },
-  { url: "/doc/wen-yan", title: "文言傳" },
-  { url: "/doc/shuo-gua", title: "說卦傳" },
-  { url: "/doc/xu-gua", title: "序卦傳" },
-  { url: "/doc/za-gua", title: "雜卦傳" },
-];
+import { navs } from "./services/Yijing";
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Y from "@freizl/yijing/zh-TW/64gua.json";
+import { Y } from "../services/Yijing";
 import { useRoute } from "vue-router";
 import { transform } from "../services/Gua";
 import GuaItem from "../components/GuaItem.vue";
