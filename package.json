@@ -15,7 +15,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@freizl/yijing": "freizl/yijing#ccd898f3ea51e2808176de448805db94f2dfc78d",
+    "@freizl/yijing": "^1.3.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
