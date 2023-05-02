@@ -62,7 +62,7 @@
 
     <ul>
       <li>
-        <code>hw214 AT pm.me</code>
+        <code>https://github.com/js-fun/duyijing/issues</code>
       </li>
     </ul>
   </div>
