@@ -1,4 +1,4 @@
-import type { SixtyFourGua } from "@freizl/yijing";
+import type { SixtyFourGua, XianTian8Gua } from "@freizl/yijing";
 import YData from "@freizl/yijing/zh-CN/64gua.json";
 import XianTianData from "@freizl/yijing/zh-CN/xian-tian-8gua.json";
 import XiCiData from "@freizl/yijing/zh-CN/xi-ci.json";
@@ -27,6 +27,19 @@ export function getGuaData(key: string) {
   }
   return re;
 }
+
+const eightGuaData = new Map<String, XianTian8Gua>();
+XianTianData.forEach(val => {
+  eightGuaData.set(val.id, val);
+});
+export function getEightGuaData(key: String) {
+  const re = eightGuaData.get(key);
+  if (!re) {
+    throw Error(`Unable to find Eight-Gua via key ${key}`);
+  }
+  return re;
+}
+
 export const navs = [
   { url: "/", title: "易经" },
   { url: "/doc/yijing/1", title: "易传上" },

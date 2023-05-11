@@ -1,15 +1,32 @@
 <script setup lang="ts">
 import { getSixFourGuas } from "../services/Home";
+import { XianTian } from "../services/Yijing";
 import GuaItemSmall from "../components/GuaItemSmall.vue";
+import EightGuaItemSmall from "../components/EightGuaItemSmall.vue";
 const itemss = getSixFourGuas();
+const xianTianGuas = XianTian.reverse();
 </script>
 
 <template>
   <div class="six-four">
     <table class="table">
+      <tr>
+        <td v-for="item in xianTianGuas" v-bind:key="item.id">
+          <EightGuaItemSmall :id="item.id" />
+        </td>
+        <td style="font-size: 15px;padding-top: 20px;">
+          <span>← 上卦</span>
+          <br/>
+          <span>↓ 下卦</span>
+        </td>
+      </tr>
+
       <tr v-for="(items, index) in itemss" v-bind:key="index">
         <td v-for="item in items" v-bind:key="item.id">
           <GuaItemSmall :id="item.id" />
+        </td>
+        <td>
+          <EightGuaItemSmall :id="xianTianGuas[index].id" />
         </td>
       </tr>
     </table>
