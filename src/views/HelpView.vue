@@ -8,24 +8,24 @@
       </li>
       <li>
         <p>直接修改如下链接中的卦名 (把"谦"字改成你需要查询的卦名)</p>
-        <code>https://www.duyijing.cn/#!/gua/谦</code>
+        <code>https://www.duyijing.cn/gua/谦</code>
       </li>
       <li>
         <p>
           用二进制查询. 这里1表示阳爻, 0表示阴爻; 最右边为初爻.
           比如下面链接可得"师"卦.
         </p>
-        <code>https://www.duyijing.cn/#!/gua/000010</code>
+        <code>https://www.duyijing.cn/gua/000010</code>
       </li>
       <li>
         <p>
           用卜噬所得数字(6,7,8,9). 同理最右边为初爻. 比如下面链接可得"蒙"卦.
         </p>
-        <code>https://www.duyijing.cn/#!/gua/788698</code>
+        <code>https://www.duyijing.cn/gua/788698</code>
       </li>
       <li>
         <p>数字卦占卜所得三个数字. 最右边为第一个数字.</p>
-        <code>https://www.duyijing.cn/#!/gua/333-222-111</code>
+        <code>https://www.duyijing.cn/gua/333-222-111</code>
       </li>
       <li>
         <p>
