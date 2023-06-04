@@ -2,7 +2,7 @@
 import { getGuaData, XianTian } from "./Yijing";
 
 const bushiKeys = /[6-9]{6}/;
-const digitalGuaKeys = /[1-9]{3}-[0-9]{3}-[0-9]{3}/;
+const digitalGuaKeys = /[1-9][0-9]{2}-[1-9][0-9]{2}-[1-9][0-9]{2}/;
 
 /**
  * Allow use 6,7,8,9 as key value
