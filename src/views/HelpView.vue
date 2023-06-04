@@ -1,6 +1,4 @@
 <script lang="ts">
-import { ref } from "vue";
-
 export default {
   data() {
     return {
@@ -8,7 +6,7 @@ export default {
     };
   },
   methods: {
-    visitGua(val) {
+    visitGua(val: string) {
       location.href = `/gua/${val}`;
     },
   },
@@ -115,5 +113,5 @@ input {
   width: 120px;
   display: inline-block;
   margin-right: 1rem;
- }
+}
 </style>

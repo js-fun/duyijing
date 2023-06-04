@@ -11,12 +11,16 @@ const xianTianGuas = XianTian.reverse();
   <div class="six-four">
     <table class="table">
       <tr>
-        <td v-for="item in xianTianGuas" v-bind:key="item.id" class="xian-tian-gua">
+        <td
+          v-for="item in xianTianGuas"
+          v-bind:key="item.id"
+          class="xian-tian-gua"
+        >
           <EightGuaItemSmall :id="item.id" />
         </td>
-        <td style="font-size: 15px;padding-top: 20px;" class="xian-tian-gua">
+        <td style="font-size: 15px; padding-top: 20px" class="xian-tian-gua">
           <span>← 上卦</span>
-          <br/>
+          <br />
           <span>↓ 下卦</span>
         </td>
       </tr>

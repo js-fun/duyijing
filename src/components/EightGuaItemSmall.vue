@@ -1,33 +1,33 @@
 // Visual representation of 8gua
 
 <script setup lang="ts">
- import { getEightGuaData } from "../services/Yijing";
+import { getEightGuaData } from "../services/Yijing";
 
- const props = defineProps<{ id: string }>();
- const data = getEightGuaData(props.id);
+const props = defineProps<{ id: string }>();
+const data = getEightGuaData(props.id);
 
- const vo = {
-   id: data.id,
-   name: data.name,
-   title: `${data.name} (${data.alias})`,
-   yaos: data.id.split("").map((x: string) => (x === "1" ? "yang" : "yin")),
- };
+const vo = {
+  id: data.id,
+  name: data.name,
+  title: `${data.name} (${data.alias})`,
+  yaos: data.id.split("").map((x: string) => (x === "1" ? "yang" : "yin")),
+};
 </script>
 <template>
-    <section class="gua small">
-      <span
-        v-for="(item, index) in vo.yaos"
-        :class="item"
-        v-bind:key="index"
-      ></span>
-      <label class="name2">{{ vo.title }}</label>
-    </section>
+  <section class="gua small">
+    <span
+      v-for="(item, index) in vo.yaos"
+      :class="item"
+      v-bind:key="index"
+    ></span>
+    <label class="name2">{{ vo.title }}</label>
+  </section>
 </template>
 
 <style scoped>
- section {
-   margin-top: 10px;
- }
+section {
+  margin-top: 10px;
+}
 
 .gua .yang,
 .gua .yin {
@@ -35,8 +35,8 @@
 }
 
 .gua .name2 {
-   font-size: 15px;
- }
+  font-size: 15px;
+}
 
 .gua .yang {
   background-color: var(--color-red);

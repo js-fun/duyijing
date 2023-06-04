@@ -29,7 +29,7 @@ export function getGuaData(key: string) {
 }
 
 const eightGuaData = new Map<String, XianTian8Gua>();
-XianTianData.forEach(val => {
+XianTianData.forEach((val) => {
   eightGuaData.set(val.id, val);
 });
 export function getEightGuaData(key: String) {
