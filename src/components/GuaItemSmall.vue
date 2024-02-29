@@ -69,7 +69,7 @@ const vo = {
 @media (max-width: 375px) {
   .gua.small .name,
   .gua.small .name2 {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .gua.small .yin {

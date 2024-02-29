@@ -18,10 +18,13 @@ const xianTianGuas = XianTian.reverse();
         >
           <EightGuaItemSmall :id="item.id" />
         </td>
-        <td style="font-size: 15px; padding-top: 20px" class="xian-tian-gua">
-          <span>← 上卦</span>
+        <td
+          style="font-size: 15px; padding-top: 20px"
+          class="xian-tian-gua"
+        >
+          <span class="xian-tain-gua-note">← 上卦</span>
           <br />
-          <span>↓ 下卦</span>
+          <span class="xian-tain-gua-note">↓ 下卦</span>
         </td>
       </tr>
 
@@ -73,6 +76,9 @@ table {
 @media (max-width: 375px) {
   .six-four table tr td {
     padding: 1px 3px;
+  }
+  .xian-tain-gua-note {
+    display: none;
   }
 }
 </style>
