@@ -50,12 +50,31 @@ section {
 .gua.small .yang,
 .gua.small .yin {
   margin-bottom: 5px;
-  height: 6px;
-  width: 40px;
+  height: 5px;
+  width: 46px;
 }
 
 .gua.small .yin {
-  border-left-width: 18px;
-  border-right-width: 18px;
+  border-left-width: 21px;
+  border-right-width: 21px;
+}
+
+@media (max-width: 375px) {
+  .gua.small .name,
+  .gua.small .name2 {
+    font-size: 11px;
+  }
+
+  .gua.small .yin {
+    border-left-width: 14px;
+    border-right-width: 14px;
+  }
+
+  .gua.small .yang,
+  .gua.small .yin {
+    margin-bottom: 5px;
+    height: 3px;
+    width: 30px;
+  }
 }
 </style>

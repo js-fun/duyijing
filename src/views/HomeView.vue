@@ -69,4 +69,10 @@ table {
     text-decoration: none !important;
   }
 }
+
+@media (max-width: 375px) {
+  .six-four table tr td {
+    padding: 1px 3px;
+  }
+}
 </style>
