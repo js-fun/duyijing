@@ -1,19 +1,59 @@
-<script setup lang="ts">
+<script lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import { navs } from "./services/Yijing";
+
+export default {
+  data() {
+    return {
+      isMobile: false,
+      isMenuVisible: true,
+      navs,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuVisible = !this.isMenuVisible;
+    },
+    checkViewport() {
+      const mediaQuery = window.matchMedia("(max-width: 375px)");
+      this.isMobile = mediaQuery.matches;
+      this.isMenuVisible = !this.isMobile;
+    },
+  },
+  created() {
+    this.checkViewport();
+  },
+};
 </script>
 
 <template>
   <header>
     <nav>
-      <RouterLink
-        v-for="n in navs"
-        class="nav-link"
-        :to="n.url"
-        v-bind:key="n.title"
-      >
-        {{ n.title }}
-      </RouterLink>
+      <button @click="toggleMenu" class="menu-button" aria-label="Toggle menu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12.5A.5.5 0 0 1 2 12V11a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-11zm0-5A.5.5 0 0 1 2 7V6a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-11zm0-5A.5.5 0 0 1 2 2V1a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-11z"
+          />
+        </svg>
+      </button>
+      <div class="menu" v-show="isMenuVisible">
+        <RouterLink
+          v-for="n in navs"
+          class="nav-link"
+          :to="n.url"
+          v-bind:key="n.title"
+        >
+          {{ n.title }}
+        </RouterLink>
+      </div>
     </nav>
   </header>
 
@@ -41,6 +81,15 @@ header {
   z-index: 1080;
 }
 
+.menu-button {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
 nav {
   text-align: center;
   background-color: var(--color-black-mo);
@@ -61,7 +110,7 @@ nav a {
   display: inline-block;
   padding: 0 0.3rem;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -75,5 +124,14 @@ hr {
 
 footer {
   font-size: 12px;
+}
+
+@media (max-width: 375px) {
+  nav {
+    padding: 5px 0;
+  }
+  .menu-button {
+    display: block;
+  }
 }
 </style>
