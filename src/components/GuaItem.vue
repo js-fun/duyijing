@@ -118,7 +118,7 @@ export default {
 .gua-item {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   column-gap: 1rem;
 }
@@ -127,7 +127,7 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
@@ -164,6 +164,7 @@ export default {
 .text {
   flex: 2;
   margin-top: 55px;
+  min-width: 15em;
 }
 .text section label {
   font-size: var(--secondary-title-font-size);
