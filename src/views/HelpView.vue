@@ -122,9 +122,4 @@ input {
   display: inline-block;
 }
 
-@media (max-width: 375px) {
-  .about {
-    font-size: 13px;
-  }
-}
 </style>

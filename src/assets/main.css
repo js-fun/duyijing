@@ -73,8 +73,7 @@ body {
   font-weight: normal;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
   color: var(--color-text);
   transition: 0.4s;
@@ -83,3 +82,8 @@ a:hover {
   text-decoration: underline !important;
 }
 
+@media (max-width: 375px) {
+  .about {
+    font-size: 12pt;
+  }
+}

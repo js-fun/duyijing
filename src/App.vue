@@ -117,7 +117,6 @@ nav a {
   display: inline-block;
   padding: 0 0.3rem;
   text-decoration: none;
-  font-size: 16px;
   font-weight: 600;
 }
 
@@ -130,7 +129,7 @@ hr {
 }
 
 footer {
-  font-size: 12px;
+  font-size: 11pt;
 }
 
 @media (max-width: 375px) {
