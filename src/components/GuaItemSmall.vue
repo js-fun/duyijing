@@ -8,7 +8,7 @@ const vo = {
   id: data.id,
   name: data.name,
   url: "/gua/" + data.name,
-  nameClass: data.name.length === 1 ? "name" : "name2",
+  nameClass: "name",
   title: data.name + "卦",
   yaos: data.id.split("").map((x: string) => (x === "1" ? "yang" : "yin")),
 };
@@ -27,14 +27,19 @@ const vo = {
 </template>
 
 <style scoped>
-.gua .yang,
-.gua .yin {
-  display: block;
+.gua.small {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+  justify-content: center;
+  width: 40px;
+  flex-wrap: nowrap;
+  justify-content: end;
 }
 
-.gua .name,
-.gua .name2 {
-  cursor: pointer;
+.gua.small label {
+  font-size: 16px;
+  text-wrap: nowrap;
 }
 
 .gua .yang {
@@ -46,42 +51,33 @@ const vo = {
   border-right-style: solid;
 }
 
-.gua.small .name {
-  margin-bottom: 2px;
-  font-size: 18px;
-}
-.gua.small .name2 {
-  font-size: 18px;
-}
-
 .gua.small .yang,
 .gua.small .yin {
-  margin-bottom: 3px;
   height: 5px;
-  width: 46px;
 }
 
 .gua.small .yin {
-  border-left-width: 21px;
-  border-right-width: 21px;
+  border-left-width: 18px;
+  border-right-width: 18px;
 }
 
 @media (max-width: 375px) {
-  .gua.small .name,
-  .gua.small .name2 {
+  .gua.small {
+    width: 26px;
+    row-gap: 2px;
+  }
+  .gua.small label {
     font-size: 12px;
   }
 
   .gua.small .yin {
-    border-left-width: 14px;
-    border-right-width: 14px;
+    border-left-width: 12px;
+    border-right-width: 12px;
   }
 
   .gua.small .yang,
   .gua.small .yin {
-    margin-bottom: 3px;
     height: 3px;
-    width: 30px;
   }
 }
 </style>

@@ -9,18 +9,18 @@ const data = getEightGuaData(props.id);
 const vo = {
   id: data.id,
   name: data.name,
-  title: `${data.name} (${data.alias})`,
+  title: `${data.name}(${data.alias})`,
   yaos: data.id.split("").map((x: string) => (x === "1" ? "yang" : "yin")),
 };
 </script>
 <template>
   <section class="gua small">
+    <label class="name">{{ vo.title }}</label>
     <span
       v-for="(item, index) in vo.yaos"
       :class="item"
       v-bind:key="index"
     ></span>
-    <label class="name">{{ vo.title }}</label>
   </section>
 </template>
 
@@ -29,6 +29,15 @@ const vo = {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  row-gap: 5px;
+  flex-wrap: nowrap;
+  width: 40px;
+  justify-content: end;
+}
+
+.gua.small label {
+  font-size: 14px;
+  text-wrap: nowrap;
 }
 
 .gua .yang {
@@ -42,27 +51,30 @@ const vo = {
 
 .gua.small .yang,
 .gua.small .yin {
-  margin-bottom: 5px;
   height: 5px;
-  width: 46px;
 }
 
 .gua.small .yin {
-  border-left-width: 21px;
-  border-right-width: 21px;
+  border-left-width: 18px;
+  border-right-width: 18px;
 }
 
 @media (max-width: 375px) {
+  .gua.small {
+    width: 26px;
+    row-gap: 3px;
+  }
+  .gua.small label {
+    font-size: 9px;
+  }
   .gua.small .yin {
-    border-left-width: 14px;
-    border-right-width: 14px;
+    border-left-width: 12px;
+    border-right-width: 12px;
   }
 
   .gua.small .yang,
   .gua.small .yin {
-    margin-bottom: 5px;
     height: 3px;
-    width: 30px;
   }
 }
 </style>

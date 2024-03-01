@@ -20,8 +20,8 @@ const xianTianGuas = XianTian.reverse();
         </td>
         <td class="xian-tian-gua-container">
           <div class="xian-tain-gua-action">
-            <span class="xian-tain-gua-note">← 上卦</span>
-            <span class="xian-tain-gua-note">↓ 下卦</span>
+            <span class="xian-tain-gua-note">←上卦</span>
+            <span class="xian-tain-gua-note">↓下卦</span>
           </div>
         </td>
       </tr>
@@ -51,10 +51,10 @@ const xianTianGuas = XianTian.reverse();
 }
 
 .six-four table tr td {
-  border-left: 1px solid #000;
   text-align: center;
-  padding: 8px 10px;
+  padding: 5px 10px 10px;
   vertical-align: bottom;
+  border-left: 1px solid #000;
   border-top: 1px solid #000;
 }
 table {
@@ -63,11 +63,11 @@ table {
 
 .xian-tian-gua-container {
   background-color: #d1d9e0;
-  font-size: 15px;
 }
 .xian-tain-gua-action {
   display: flex;
   flex-direction: column;
+  font-size: 12px;
 }
 
 @media (hover: hover) {
@@ -78,9 +78,9 @@ table {
 
 @media (max-width: 375px) {
   .six-four table tr td {
-    padding: 1px 3px;
+    padding: 3px 5px 5px;
   }
-  .xian-tian-gua-container {
+  .xian-tain-gua-action {
     font-size: 9px;
   }
   .xian-tain-gua-note {
