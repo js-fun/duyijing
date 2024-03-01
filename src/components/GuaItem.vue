@@ -150,9 +150,9 @@ export default {
 .gua .yin {
   border-color: var(--color-black);
   border-left-style: solid;
-  border-left-width: 75px;
   border-right-style: solid;
-  border-right-width: 75px;
+  border-left-width: 70px;
+  border-right-width: 70px;
 }
 
 .gua .yang.inactive,

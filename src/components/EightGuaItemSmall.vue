@@ -40,13 +40,8 @@ const vo = {
   text-wrap: nowrap;
 }
 
-.gua .yang {
+.gua.small .yang {
   background-color: var(--color-red);
-}
-.gua .yin {
-  border-color: var(--color-black);
-  border-left-style: solid;
-  border-right-style: solid;
 }
 
 .gua.small .yang,
@@ -55,8 +50,11 @@ const vo = {
 }
 
 .gua.small .yin {
-  border-left-width: 18px;
-  border-right-width: 18px;
+  border-color: var(--color-black);
+  border-left-style: solid;
+  border-right-style: solid;
+  border-left-width: 17px;
+  border-right-width: 17px;
 }
 
 @media (max-width: 375px) {
@@ -68,8 +66,8 @@ const vo = {
     font-size: 9px;
   }
   .gua.small .yin {
-    border-left-width: 12px;
-    border-right-width: 12px;
+    border-left-width: 11px;
+    border-right-width: 11px;
   }
 
   .gua.small .yang,

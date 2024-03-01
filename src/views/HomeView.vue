@@ -62,7 +62,7 @@ table {
 }
 
 .xian-tian-gua-container {
-  ackground-color: #d1d9e0;
+  background-color: #d1d9e0;
 }
 .xian-tain-gua-action {
   display: flex;
