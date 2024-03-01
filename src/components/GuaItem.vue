@@ -35,7 +35,7 @@ export default {
     const vo: ViewObject = {
       id: guaVal.id,
       name: guaVal.name,
-      nameClass: guaVal.name.length === 1 ? "name" : "name2",
+      nameClass: "name",
       guaCi: guaVal.gua_ci,
       tuanCi: guaVal.tuan_ci,
       daXiang: guaVal.da_xiang,
@@ -127,12 +127,12 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  height: 300px;
 }
 
-.gua .name,
-.gua .name2 {
+.gua .name {
   font-size: var(--secondary-title-font-size);
   cursor: default;
 }
@@ -141,7 +141,6 @@ export default {
 .gua .yin {
   display: block;
   cursor: default;
-  margin-bottom: 15px;
   height: 30px;
   width: 160px;
 }
@@ -163,9 +162,16 @@ export default {
 
 .text {
   flex: 2;
-  margin-top: 55px;
   min-width: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
 }
+.text section  {
+  padding: 15px 0 0;
+}
+
 .text section label {
   font-size: var(--secondary-title-font-size);
 }
