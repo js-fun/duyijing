@@ -20,22 +20,15 @@ const vo = {
       :class="item"
       v-bind:key="index"
     ></span>
-    <label class="name2">{{ vo.title }}</label>
+    <label class="name">{{ vo.title }}</label>
   </section>
 </template>
 
 <style scoped>
-section {
-  margin-top: 10px;
-}
-
-.gua .yang,
-.gua .yin {
-  display: block;
-}
-
-.gua .name2 {
-  font-size: 15px;
+.gua.small {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .gua .yang {
@@ -60,11 +53,6 @@ section {
 }
 
 @media (max-width: 375px) {
-  .gua.small .name,
-  .gua.small .name2 {
-    font-size: 12px;
-  }
-
   .gua.small .yin {
     border-left-width: 14px;
     border-right-width: 14px;

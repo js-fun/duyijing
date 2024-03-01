@@ -14,17 +14,15 @@ const xianTianGuas = XianTian.reverse();
         <td
           v-for="item in xianTianGuas"
           v-bind:key="item.id"
-          class="xian-tian-gua"
+          class="xian-tian-gua-container"
         >
           <EightGuaItemSmall :id="item.id" />
         </td>
-        <td
-          style="font-size: 15px; padding-top: 20px"
-          class="xian-tian-gua"
-        >
-          <span class="xian-tain-gua-note">← 上卦</span>
-          <br />
-          <span class="xian-tain-gua-note">↓ 下卦</span>
+        <td class="xian-tian-gua-container">
+          <div class="xian-tain-gua-action">
+            <span class="xian-tain-gua-note">← 上卦</span>
+            <span class="xian-tain-gua-note">↓ 下卦</span>
+          </div>
         </td>
       </tr>
 
@@ -32,7 +30,7 @@ const xianTianGuas = XianTian.reverse();
         <td v-for="item in items" v-bind:key="item.id">
           <GuaItemSmall :id="item.id" />
         </td>
-        <td class="xian-tian-gua">
+        <td class="xian-tian-gua-container">
           <EightGuaItemSmall :id="xianTianGuas[index].id" />
         </td>
       </tr>
@@ -55,16 +53,21 @@ const xianTianGuas = XianTian.reverse();
 .six-four table tr td {
   border-left: 1px solid #000;
   text-align: center;
-  padding: 8px 20px;
-  vertical-align: top;
+  padding: 8px 10px;
+  vertical-align: bottom;
   border-top: 1px solid #000;
 }
 table {
   border-collapse: collapse;
 }
 
-.xian-tian-gua {
+.xian-tian-gua-container {
   background-color: #d1d9e0;
+  font-size: 15px;
+}
+.xian-tain-gua-action {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (hover: hover) {
@@ -76,6 +79,9 @@ table {
 @media (max-width: 375px) {
   .six-four table tr td {
     padding: 1px 3px;
+  }
+  .xian-tian-gua-container {
+    font-size: 9px;
   }
   .xian-tain-gua-note {
     display: none;
