@@ -21,35 +21,30 @@ export default {
         <p>从主页的六十四卦表中查询, 点机查看详细。</p>
       </li>
       <li>
-        <fieldset>
-          在下面输入框中输入
-          <ul>
-            <li>
-              <p>卦名，比如"谦"。</p>
-            </li>
-            <li>
-              <p>
-                二进制数据。这里1表示阳爻,
-                0表示阴爻。最右边为初爻。比如输入"000010"，可得"师"卦。
-              </p>
-            </li>
-            <li>
-              <p>
-                卜噬所得数字(6,7,8,9)。最右边为初爻。比如输入"788698"，可得"蒙"卦。
-              </p>
-            </li>
-            <li>
-              <p>
-                数字卦占卜所得三个数字。最右边为第一个数字。比如"115-978-319"，可得"咸"卦。
-              </p>
-            </li>
-          </ul>
-        </fieldset>
-        <fieldset>
-          <legend>&#x262F;</legend>
-          <input v-model="guaMing" type="input" placeholder="" />
-          <button value="Go" @click="visitGua(guaMing)">查询</button>
-        </fieldset>
+        <div class="query">
+          <input
+            v-model="guaMing"
+            type="input"
+            placeholder="选择任意一种方式输入"
+          />
+          <button value="Go" @click="visitGua(guaMing)">查询 &#x262F;</button>
+        </div>
+
+        <ul>
+          <li>
+            <p>卦名，比如"谦"。</p>
+          </li>
+          <li>
+            <p>
+              卜噬所得数字(6,7,8,9)。最右边为初爻。比如输入"788698"，可得"蒙"卦。
+            </p>
+          </li>
+          <li>
+            <p>
+              数字卦占卜所得三个数字。最右边为第一个数字。比如"115-978-319"，可得"咸"卦。
+            </p>
+          </li>
+        </ul>
       </li>
       <li>
         <p>
@@ -86,13 +81,20 @@ export default {
 
     <ul>
       <li>
-        <code>https://github.com/js-fun/duyijing/issues</code>
+        <a
+          href="https://github.com/js-fun/duyijing/issues"
+          ref="nofollow noreferer"
+          >github.com/js-fun</a
+        >
       </li>
     </ul>
   </div>
 </template>
 
 <style scoped>
+ul {
+  padding-left: 18px;
+}
 ul.help li {
   padding-bottom: 10px;
 }
@@ -102,6 +104,12 @@ h2 {
   margin: 2rem 0 1rem;
 }
 
+.query {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 0.5rem;
+}
 button {
   padding: 0.38rem 1rem;
   border: 1px solid #c0c0c0;
@@ -110,8 +118,13 @@ button {
 
 input {
   padding: 0.5rem;
-  width: 120px;
+  width: 160px;
   display: inline-block;
-  margin-right: 1rem;
+}
+
+@media (max-width: 375px) {
+  .about {
+    font-size: 13px;
+  }
 }
 </style>
