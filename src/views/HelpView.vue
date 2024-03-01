@@ -92,9 +92,6 @@ export default {
 </template>
 
 <style scoped>
-ul {
-  padding-left: 18px;
-}
 ul.help li {
   padding-bottom: 10px;
 }

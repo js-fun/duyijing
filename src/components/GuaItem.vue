@@ -133,7 +133,7 @@ export default {
 }
 
 .gua .name {
-  font-size: var(--secondary-title-font-size);
+  font-size: var(--font-size-secondary-title);
   cursor: default;
 }
 
@@ -173,6 +173,6 @@ export default {
 }
 
 .text section label {
-  font-size: var(--secondary-title-font-size);
+  font-size: var(--font-size-secondary-title);
 }
 </style>

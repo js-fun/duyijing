@@ -1,40 +1,16 @@
-/* color palette from <https://github.com/vuejs/theme> */
-:root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-indigo: #213547;
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
-
 /* semantic color variables for this project */
 :root {
   --color-black-mo: #50616d;
   --color-black-qi: #161823;
   --color-white: #fffbf0;
-  --color-purple: #4c221b;
   --color-red: #ff2121;
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --color-border: rgba(60, 60, 60, 0.12);
+  --color-border-hover: rgba(60, 60, 60, 0.29);
+  --color-text: #213547;
   --color-background: var(--color-white-qi);
 
-  --secondary-title-font-size: 20pt;
+  --font-size-secondary-title: 1.6em;
 }
 
 /*
@@ -55,10 +31,18 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
   line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Ubuntu,
+    "Fira Sans",
+    "Helvetica Neue",
     sans-serif;
   font-size: 14pt;
   text-rendering: optimizeLegibility;
@@ -82,7 +66,15 @@ a:hover {
   text-decoration: underline !important;
 }
 
+ol,
+ul {
+  padding-left: 1.5em;
+}
+
 @media (max-width: 375px) {
+  :root {
+   --font-size-secondary-title: 1.3em;
+  }
   .about {
     font-size: 12pt;
   }
