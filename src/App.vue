@@ -32,8 +32,8 @@ export default {
       <button @click="toggleMenu" class="menu-button" aria-label="Toggle menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
+          width="20"
+          height="20"
           fill="currentColor"
           class="bi bi-list"
           viewBox="0 0 16 16"
@@ -83,6 +83,13 @@ header {
 
 .menu-button {
   display: none;
+  width: 30px;
+  height: 30px;
+  padding: 5px 0 0;
+  background-color: #d1d9e0;
+  border: 0;
+  border-radius: 5px;
+  margin-left: 5px;
 }
 
 .menu {
