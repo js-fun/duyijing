@@ -118,5 +118,4 @@ input {
   width: 160px;
   display: inline-block;
 }
-
 </style>

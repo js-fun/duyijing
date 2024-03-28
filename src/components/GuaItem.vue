@@ -166,9 +166,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: end;
-
 }
-.text section  {
+.text section {
   padding: 15px 0 0;
 }
 
