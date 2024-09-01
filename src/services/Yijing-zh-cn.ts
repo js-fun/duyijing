@@ -28,11 +28,11 @@ export function getGuaData(key: string) {
   return re;
 }
 
-const eightGuaData = new Map<String, XianTian8Gua>();
+const eightGuaData = new Map<string, XianTian8Gua>();
 XianTianData.forEach((val) => {
   eightGuaData.set(val.id, val);
 });
-export function getEightGuaData(key: String) {
+export function getEightGuaData(key: string) {
   const re = eightGuaData.get(key);
   if (!re) {
     throw Error(`Unable to find Eight-Gua via key ${key}`);
