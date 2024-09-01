@@ -1,29 +1,30 @@
 <script lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import { navs } from "./services/Yijing";
+ /* eslint-disable @typescript-eslint/no-unused-vars */
+ import { RouterLink, RouterView } from "vue-router";
+ import { navs } from "./services/Yijing";
 
-export default {
-  data() {
-    return {
-      isMobile: false,
-      isMenuVisible: true,
-      navs,
-    };
-  },
-  methods: {
-    toggleMenu() {
-      this.isMenuVisible = !this.isMenuVisible;
-    },
-    checkViewport() {
-      const mediaQuery = window.matchMedia("(max-width: 375px)");
-      this.isMobile = mediaQuery.matches;
-      this.isMenuVisible = !this.isMobile;
-    },
-  },
-  created() {
-    this.checkViewport();
-  },
-};
+ export default {
+   data() {
+     return {
+       isMobile: false,
+       isMenuVisible: true,
+       navs,
+     };
+   },
+   methods: {
+     toggleMenu() {
+       this.isMenuVisible = !this.isMenuVisible;
+     },
+     checkViewport() {
+       const mediaQuery = window.matchMedia("(max-width: 375px)");
+       this.isMobile = mediaQuery.matches;
+       this.isMenuVisible = !this.isMobile;
+     },
+   },
+   created() {
+     this.checkViewport();
+   },
+ };
 </script>
 
 <template>
