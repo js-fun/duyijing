@@ -66,7 +66,8 @@
   <footer class="footer">
     <p>
       <span>© 2012-present HaishengWu </span>
-      <RouterLink to="/help">帮助</RouterLink>
+      <RouterLink class="help-item" to="/help">帮助</RouterLink>
+      <RouterLink class="help-item" to="/sponsor">打赏</RouterLink>
     </p>
   </footer>
 </template>
@@ -131,6 +132,10 @@ hr {
 
 footer {
   font-size: 11pt;
+}
+
+footer .help-item {
+  margin-right: 5px;
 }
 
 @media (max-width: 375px) {
