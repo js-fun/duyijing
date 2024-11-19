@@ -27,8 +27,8 @@ export default {
       const kind = x === "1" ? "yang" : "yin";
       return {
         kind,
-        yaoCi: guaVal.yao_ci[5 - index],
-        xiaoXiang: guaVal.xiao_xiang[5 - index],
+        yaoCi: guaVal.yao_ci[index],
+        xiaoXiang: guaVal.xiao_xiang[index],
         className: kind as string,
       };
     });
@@ -40,7 +40,7 @@ export default {
       tuanCi: guaVal.tuan_ci,
       daXiang: guaVal.da_xiang,
       activeYao: undefined,
-      yaos,
+      yaos: yaos.reverse(),
     };
     return { vo };
   },

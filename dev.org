@@ -28,4 +28,5 @@ CLOSED: [2023-02-04 Sat 21:33]
 * TODO Extra shared css for yang/yin yao span
 * DONE Default to cn
 CLOSED: [2023-02-04 Sat 21:32]
-* Add separated site for zh-tw via build
+* TODO Add separated site for zh-tw via build
+- The poor-man's solution is copy ~Yijing-zh-cn~ or ~Yijing-zh-tw~ to ~Yijing~ to change language at build time.

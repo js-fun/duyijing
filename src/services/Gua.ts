@@ -1,23 +1,23 @@
-// import { SixtyFourGua } from "@freizl/yijing/zh-TW/64gua.json";
 import { getGuaData, XianTian } from "./Yijing";
 
 const bushiKeys = /[6-9]{6}/;
 const digitalGuaKeys = /[1-9][0-9]{2}-[1-9][0-9]{2}-[1-9][0-9]{2}/;
 
 /**
- * Allow use 6,7,8,9 as key value
- * which are values coming out from 卜噬
+ * Allow use 6,7,8,9 as key value or 3 digits
+ * which are values coming out from 卜噬。
+ * Left-most char is the 初爻。
  */
 function normalizeKey(originalKey: string) {
   let key = originalKey;
   if (originalKey.match(digitalGuaKeys)) {
     const ds = originalKey.split("-");
-    const xiaGuaIndex = parseInt(ds[2]) % 8 || 8;
+    const xiaGuaIndex = parseInt(ds[0]) % 8 || 8;
     const xiaGuaId = XianTian[xiaGuaIndex - 1].id;
     const shangGuaIndex = parseInt(ds[1]) % 8 || 8;
     const shangGuaId = XianTian[shangGuaIndex - 1].id;
 
-    key = shangGuaId + xiaGuaId;
+    key = xiaGuaId + shangGuaId;
   }
 
   const xs = key.split("");
@@ -52,14 +52,13 @@ function jiaoGua(key: string) {
 function zhiGua(originalKey: string, normalizedKey: string) {
   if (originalKey.match(digitalGuaKeys)) {
     const ds = originalKey.split("-");
-    const yaoBianIndex = parseInt(ds[0]) % 6 || 6;
+    const yaoBianIndex = parseInt(ds[2]) % 6 || 6;
 
     return normalizedKey
       .split("")
       .map(function (v, index) {
-        // 初爻在最右边 即最大index. 数字卦得到数字表明主要的爻 以及爻变.
-        // 所以 (6-yaoBianIndex)
-        if (index === 6 - yaoBianIndex) {
+        // 初爻在最左边. 数字卦得到数字（第三个数字）表明主要的爻 以及爻变.
+        if (index === yaoBianIndex) {
           if (v === "1") {
             return "0";
           } else {
