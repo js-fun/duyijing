@@ -23,15 +23,18 @@ export default {
   },
   data() {
     const guaVal = getGuaData(this.id || "");
-    const yaos = guaVal.id.split("").map((x: string, index: number) => {
-      const kind = x === "1" ? "yang" : "yin";
-      return {
-        kind,
-        yaoCi: guaVal.yao_ci[index],
-        xiaoXiang: guaVal.xiao_xiang[index],
-        className: kind as string,
-      };
-    });
+    const yaos = guaVal.id
+      .split("")
+      .reverse()
+      .map((x: string, index: number) => {
+        const kind = x === "1" ? "yang" : "yin";
+        return {
+          kind,
+          yaoCi: guaVal.yao_ci[index],
+          xiaoXiang: guaVal.xiao_xiang[index],
+          className: kind as string,
+        };
+      });
     const vo: ViewObject = {
       id: guaVal.id,
       name: guaVal.name,
@@ -40,7 +43,7 @@ export default {
       tuanCi: guaVal.tuan_ci,
       daXiang: guaVal.da_xiang,
       activeYao: undefined,
-      yaos: yaos.reverse(),
+      yaos: yaos,
     };
     return { vo };
   },

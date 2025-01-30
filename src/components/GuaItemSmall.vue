@@ -10,7 +10,10 @@ const vo = {
   url: "/gua/" + data.name,
   nameClass: "name",
   title: data.name + "卦",
-  yaos: data.id.split("").map((x: string) => (x === "1" ? "yang" : "yin")),
+  yaos: data.id
+    .split("")
+    .reverse()
+    .map((x: string) => (x === "1" ? "yang" : "yin")),
 };
 </script>
 <template>

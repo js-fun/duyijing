@@ -10,7 +10,7 @@ const vo = {
   id: data.id,
   name: data.name,
   title: `${data.name}(${data.alias})`,
-  yaos: data.id.split("").map((x: string) => (x === "1" ? "yang" : "yin")),
+  yaos: data.id.split("").reverse().map((x: string) => (x === "1" ? "yang" : "yin")),
 };
 </script>
 <template>
