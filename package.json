@@ -16,7 +16,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@freizl/yijing": "^2.0.0",
+    "@freizl/yijing": "^2.1.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
