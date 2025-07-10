@@ -25,7 +25,6 @@ export default {
     const guaVal = getGuaData(this.id || "");
     const yaos = guaVal.id
       .split("")
-      .reverse()
       .map((x: string, index: number) => {
         const kind = x === "1" ? "yang" : "yin";
         return {
@@ -34,7 +33,9 @@ export default {
           xiaoXiang: guaVal.xiao_xiang[index],
           className: kind as string,
         };
-      });
+      })
+      .reverse();
+
     const vo: ViewObject = {
       id: guaVal.id,
       name: guaVal.name,
