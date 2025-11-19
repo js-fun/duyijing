@@ -4,7 +4,17 @@ import { XianTian } from "../services/Yijing";
 import GuaItemSmall from "../components/GuaItemSmall.vue";
 import EightGuaItemSmall from "../components/EightGuaItemSmall.vue";
 const itemss = getSixFourGuas();
-const xianTianGuas = XianTian.reverse();
+const xianTianGuas = [...XianTian].reverse();
+const rows = itemss.map((items, index) => {
+  const xianTian = xianTianGuas[index];
+  if (!xianTian) {
+    throw new Error(`Missing XianTian data for index ${index}`);
+  }
+  return {
+    items,
+    xianTian,
+  };
+});
 </script>
 
 <template>
@@ -27,12 +37,12 @@ const xianTianGuas = XianTian.reverse();
           </td>
         </tr>
 
-        <tr v-for="(items, index) in itemss" v-bind:key="index">
-          <td v-for="item in items" v-bind:key="item.id">
+        <tr v-for="row in rows" v-bind:key="row.xianTian.id">
+          <td v-for="item in row.items" v-bind:key="item.id">
             <GuaItemSmall :id="item.id" />
           </td>
           <td class="xian-tian-gua-container">
-            <EightGuaItemSmall :id="xianTianGuas[index].id" />
+            <EightGuaItemSmall :id="row.xianTian.id" />
           </td>
         </tr>
       </tbody>

@@ -7,13 +7,13 @@ import GuaItem from "../components/GuaItem.vue";
 const route = useRoute();
 
 // may turn name to binary id.
-const normalizeInput = (paramsKey: string | string[]): string => {
+const normalizeInput = (paramsKey: string | string[] | undefined): string => {
   // turns out `this.$route.params.id` has type `string | string[]`
-  let key: string = "";
-  if (Array.isArray(paramsKey)) {
-    key = paramsKey[0];
-  } else {
-    key = paramsKey;
+  const keyCandidate = Array.isArray(paramsKey) ? paramsKey[0] : paramsKey;
+  const key = keyCandidate ?? "";
+
+  if (!key) {
+    throw new Error("Missing gua id from route params");
   }
 
   if (key.match(/[0-9-]+/)) {
@@ -21,11 +21,15 @@ const normalizeInput = (paramsKey: string | string[]): string => {
   } else {
     const xs = Y.filter((d) => key === d.name);
     if (xs.length === 1) {
-      return xs[0].id;
+      const match = xs[0];
+      if (match) {
+        return match.id;
+      }
     } else {
       console.error(`unable to find data from key ${key}`);
       return key;
     }
+    throw new Error(`Unable to resolve gua id from key ${key}`);
   }
 };
 

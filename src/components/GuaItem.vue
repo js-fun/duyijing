@@ -27,11 +27,13 @@ export default {
       .split("")
       .map((x: string, index: number) => {
         const kind = x === "1" ? "yang" : "yin";
+        const yaoCi = guaVal.yao_ci[index] ?? "";
+        const xiaoXiang = guaVal.xiao_xiang[index] ?? "";
         return {
           kind,
-          yaoCi: guaVal.yao_ci[index],
-          xiaoXiang: guaVal.xiao_xiang[index],
-          className: kind as string,
+          yaoCi,
+          xiaoXiang,
+          className: kind,
         };
       })
       .reverse();

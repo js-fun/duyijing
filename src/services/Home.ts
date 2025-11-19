@@ -32,9 +32,15 @@ export function getSixFourGuas() {
       if (!xs[k]) {
         xs[k] = [];
       }
-      id = gua8[i] + gua8[j];
+      const row = xs[k]!;
+      const xiaId = gua8[i];
+      const shangId = gua8[j];
+      if (!xiaId || !shangId) {
+        throw new Error(`Unable to find gua ids for indices ${i} and ${j}`);
+      }
+      id = xiaId + shangId;
       o = getGuaData(id);
-      xs[k].push({ id: id, name: o.name });
+      row.push({ id: id, name: o.name });
     }
   }
 
