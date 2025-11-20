@@ -91,11 +91,7 @@ export default {
 
     <ul>
       <li>
-        <a
-          href="https://github.com/js-fun/duyijing/issues"
-          ref="nofollow noreferer"
-          >github.com/js-fun</a
-        >
+        <a href="mailto:duyijing@pm.me">duyijing@pm.me</a>
       </li>
     </ul>
   </div>
