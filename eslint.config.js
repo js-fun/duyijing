@@ -3,18 +3,6 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
 
-///////////////////////////////////////////////////////////////////////////////
-//                 How to migrate this to new eslint config?                 //
-///////////////////////////////////////////////////////////////////////////////
-
-// {
-//   files: [
-//     "**/__tests__/*.{cy,spec}.{js,ts,jsx,tsx}",
-//     "cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}",
-//   ],
-//   extends: ["plugin:cypress/recommended"],
-// },
-//
 // FIXME: fix this error
 // /Users/haishengwu/freizl/duyijing/src/App.vue
 //   2:10  error  'RouterLink' is defined but never used  @typescript-eslint/no-unused-vars
