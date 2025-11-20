@@ -12,10 +12,22 @@ function normalizeKey(originalKey: string) {
   let key = originalKey;
   if (originalKey.match(digitalGuaKeys)) {
     const ds = originalKey.split("-");
-    const xiaGuaIndex = parseInt(ds[0]) % 8 || 8;
-    const xiaGuaId = XianTian[xiaGuaIndex - 1].id;
-    const shangGuaIndex = parseInt(ds[1]) % 8 || 8;
-    const shangGuaId = XianTian[shangGuaIndex - 1].id;
+    const [xiaGuaRaw, shangGuaRaw] = ds;
+    if (!xiaGuaRaw || !shangGuaRaw) {
+      throw new Error(`Invalid gua key ${originalKey}`);
+    }
+    const xiaGuaIndex = (parseInt(xiaGuaRaw, 10) % 8) || 8;
+    const xiaGua = XianTian[xiaGuaIndex - 1];
+    if (!xiaGua) {
+      throw new Error(`Unable to find Xia Gua with index ${xiaGuaIndex}`);
+    }
+    const xiaGuaId = xiaGua.id;
+    const shangGuaIndex = (parseInt(shangGuaRaw, 10) % 8) || 8;
+    const shangGua = XianTian[shangGuaIndex - 1];
+    if (!shangGua) {
+      throw new Error(`Unable to find Shang Gua with index ${shangGuaIndex}`);
+    }
+    const shangGuaId = shangGua.id;
 
     key = xiaGuaId + shangGuaId;
   }
@@ -52,7 +64,11 @@ function jiaoGua(key: string) {
 function zhiGua(originalKey: string, normalizedKey: string) {
   if (originalKey.match(digitalGuaKeys)) {
     const ds = originalKey.split("-");
-    const yaoBianIndex = parseInt(ds[2]) % 6 || 6;
+    const yaoBianRaw = ds[2];
+    if (!yaoBianRaw) {
+      throw new Error(`Invalid gua key ${originalKey}`);
+    }
+    const yaoBianIndex = (parseInt(yaoBianRaw, 10) % 6) || 6;
 
     return normalizedKey
       .split("")
