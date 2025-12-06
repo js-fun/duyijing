@@ -68,7 +68,9 @@ function zhiGua(originalKey: string, normalizedKey: string) {
     if (!yaoBianRaw) {
       throw new Error(`Invalid gua key ${originalKey}`);
     }
-    const yaoBianIndex = (parseInt(yaoBianRaw, 10) % 6) || 6;
+    const remainder = parseInt(yaoBianRaw, 10) % 6;
+    // ShuZiGua: remainder 1-5 map to 初至五爻, 0 maps to 上爻
+    const yaoBianIndex = remainder === 0 ? 5 : remainder - 1;
 
     return normalizedKey
       .split("")
